@@ -1,0 +1,7 @@
+@"
+.venv/
+__pycache__/
+runs/
+latest_model.txt
+baseline_diagnostics.txt
+"@ | Set-Content .gitignore

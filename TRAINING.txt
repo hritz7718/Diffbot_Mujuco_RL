@@ -1,0 +1,27 @@
+TARGET-REACHING STARTER
+
+1. Double-click 1 - Setup Training.cmd. It installs Gymnasium and Stable-Baselines3
+   into your existing MuJoCo environment, then checks the environment interface,
+   reset reproducibility, episode endings and a conventional controller baseline.
+   Stop and report any error. Baseline should reach at least 8/10 targets.
+2. Double-click 2 - Train DiffBot.cmd. This starts a fresh CPU PPO run of about
+   300,000 actions. Training is headless. Duration depends on your computer.
+   Each timestamped runs folder has logs, checkpoints, source snapshots and versions.
+   Ctrl+C saves an interrupted model; the viewer only selects completed runs.
+3. Double-click 3 - Watch DiffBot.cmd after training completes. The green disk is
+   the target. Close the viewer to stop. New targets appear after each episode.
+
+TASK: random target 0.4-1.2 m away, random initial yaw; 30 second limit.
+Success: chassis centre within 0.12 m of goal. No stopping/docking requirement yet.
+Action: normalized forward speed and turning speed, converted to wheel speeds.
+Observation: target xy in robot frame, forward speed, yaw rate, wheel speeds.
+Reward: distance progress, success bonus, small time/action cost, failure penalty.
+Failure: tipping or leaving the 3 m radius training area.
+Uses ideal simulator position/velocity: real deployment requires localization.
+No obstacles, LiDAR, sensor noise, domain randomization or real robot connection.
+Success in this starter does not establish readiness for hardware deployment.
+The final printed success rate evaluates 20 seeded targets. Low success means
+more investigation/training is needed; completing training is not proof of learning.
+
+This setup has been statically checked by the assistant. Runtime checks and
+training must run on your side because its session cannot launch your Python.

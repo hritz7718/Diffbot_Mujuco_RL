@@ -1,0 +1,7 @@
+{
+  "success_rate": 1.0,
+  "episodes": 20,
+  "seed_start": 10000,
+  "baseline_success_rate_10_episodes": 1.0,
+  "timesteps": 301056
+}

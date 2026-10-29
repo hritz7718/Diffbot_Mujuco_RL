@@ -1,0 +1,14 @@
+Environment checks passed.
+Motion check (forward): forward 0.166 m, yaw change -0.2 deg, wheel speeds 2.41, 2.41
+Motion check (left turn): forward 0.051 m, yaw change 61.4 deg, wheel speeds -2.07, 2.05
+Target 10000: reached; distance 0.86 -> 0.12 m; heading error -0.0 deg; wheel speeds 0.78, 0.78
+Target 10001: reached; distance 0.67 -> 0.12 m; heading error 0.0 deg; wheel speeds 0.79, 0.78
+Target 10002: reached; distance 0.84 -> 0.12 m; heading error -0.0 deg; wheel speeds 0.79, 0.79
+Target 10003: reached; distance 1.20 -> 0.12 m; heading error -0.0 deg; wheel speeds 0.78, 0.78
+Target 10004: reached; distance 0.77 -> 0.12 m; heading error 0.0 deg; wheel speeds 0.78, 0.78
+Target 10005: reached; distance 1.18 -> 0.12 m; heading error 0.0 deg; wheel speeds 0.78, 0.78
+Target 10006: reached; distance 0.73 -> 0.12 m; heading error -0.0 deg; wheel speeds 0.79, 0.79
+Target 10007: reached; distance 0.71 -> 0.12 m; heading error 0.0 deg; wheel speeds 0.78, 0.78
+Target 10008: reached; distance 0.91 -> 0.12 m; heading error -0.0 deg; wheel speeds 0.78, 0.78
+Target 10009: reached; distance 0.88 -> 0.12 m; heading error 0.0 deg; wheel speeds 0.78, 0.78
+Conventional controller: 100% success (10 targets).
