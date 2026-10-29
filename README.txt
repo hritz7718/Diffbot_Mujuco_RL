@@ -1,26 +1,25 @@
-DIFFBOT - FIRST MUJOCO MODEL
+# DiffBot MuJoCo Reinforcement Learning
 
-Double-click Open DiffBot.cmd, or drag diffbot.xml into MuJoCo.
-Press Space to pause/resume. Expand Control to change wheel speeds.
-Both controls +3 rad/s: forward. Left -3, right +3: turn left.
-Both zero: stop. Reset returns to the initial state.
-Check DiffBot.cmd runs mechanical checks and prints results or an error.
+## Problem
 
-Preserved dimensions, masses, inertia, wheel joint damping/friction and fixed
-caster from the supplied Xacro files. Added a floating base, floor, lighting,
-wheel velocity actuators, and decorative wheel stripes. No meshes or ROS needed.
-The caster extends 3 mm below the drive wheels; slight chassis pitch is expected.
-It slides rather than rolling. Sensor housings remain massless and visual-only.
+Teach a two-wheel differential-drive robot to reach a target from different starting orientations.
 
-Provisional values: wheel/floor friction 0.8, velocity gain 1, command limit
-+/-6 rad/s, and torque limit 1 Nm. These are simulation tuning values, NOT
-verified real motor data; the original Gazebo torque limit was 20 Nm.
-Caster friction 0.05 follows Gazebo, using contact priority to override the floor.
-Friction laws differ between engines. Gazebo acceleration limiting is not ported.
+## Solution
 
-Wheel encoders, ideal gyro/accelerometer and a forward camera are defined.
-Camera vertical FOV corresponds to the source horizontal FOV at 640x480.
-LiDAR housing is included, but a functional scan is NOT implemented yet.
-ROS topics, odometry publishing, sensor noise, camera clipping, capture resolution
-and sensor update rates need a later wrapper. Gazebo plugins are not executable
-in this scene. This is a mechanical starter, not a trained or deployable policy.
+The robot is simulated in MuJoCo and wrapped as a Gymnasium environment. A PPO agent from Stable-Baselines3 learns to control forward and turning speed using the target position and robot motion. It receives rewards for moving closer and reaching the target.
+
+## Run on Windows
+
+Install Python 3.13, then run these commands in the project folder:
+
+```powershell
+python -m pip install mujoco gymnasium stable-baselines3
+python train_diffbot.py
+python watch_diffbot.py
+```
+
+Training saves a model and evaluates it on 20 targets. The viewer shows the robot driving to the green target.
+
+## Current scope
+
+This is an initial simulation with an empty floor and ideal simulated position information. Obstacle avoidance, functional LiDAR, and real-robot deployment are not yet implemented.
